@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react';
-import * as basketService from '../services/basket-service';
 import { useStoreActions, useStoreState } from 'easy-peasy';
 
 export default function Product({ id }) {
@@ -18,7 +17,7 @@ export default function Product({ id }) {
   // callback to handle click, saving to basket
   const onAddToBasketClick = useCallback(async () => {
     setAdding(true);
-    addProductToBasket(product.id); // 👈 dispatch our action
+    await addProductToBasket(product.id);
     setAdding(false);
   }, [product, addProductToBasket]);
 
