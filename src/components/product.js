@@ -2,10 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { useStoreActions, useStoreState } from 'easy-peasy';
 
 export default function Product({ id }) {
-  //       👇  map the state from store
-  const product = useStoreState((state) =>
-    state.products.items.find((product) => product.id === id)
-  );
+  const product = useStoreState(state => state.products.getById(id));
 
   // state to track when we are saving to basket
   const [adding, setAdding] = useState(false);

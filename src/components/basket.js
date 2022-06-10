@@ -8,14 +8,7 @@ export default function Basket() {
     (actions) => actions.basket.removeProduct
   );
 
-  //       👇  map the state from store
-  const basketProducts = useStoreState((state) =>
-    // take the product ids from our basket...
-    state.basket.productIds.map((productId) =>
-      // and map them to products
-      state.products.items.find((product) => product.id === productId)
-    )
-  );
+  const basketProducts = useStoreState(state => state.basket.products);
   return (
     <div>
       <h2>The merchandise</h2>
