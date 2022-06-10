@@ -1,12 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./components/app";
-import { StoreProvider } from "easy-peasy";
-import store from "./store";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/app';
+import { StoreProvider } from 'easy-peasy';
+import store from './store';
 
-import "./styles.css";
+import './styles.css';
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 ReactDOM.render(
   <StoreProvider store={store}>
     <App />

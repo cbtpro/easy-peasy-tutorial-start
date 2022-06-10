@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { basket } from '../data';
+import { useStoreState } from 'easy-peasy'; // 👈 import the hook
 
 export default function BasketCount() {
+  //       👇  map the state from store
+  const basketCount = useStoreState((state) => state.basket.productIds.length);
   return (
     <div className="BasketCount">
-      <Link to="/basket">Basket({basket.length} items)</Link>
+      <Link to="/basket">Basket({basketCount} items)</Link>
     </div>
   );
 }

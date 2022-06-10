@@ -1,6 +1,6 @@
-import React from "react";
-import BasketCount from "./basket-count";
-import Logo from "./logo";
+import React from 'react';
+import BasketCount from './basket-count';
+import Logo from './logo';
 
 export default function Header() {
   return (
